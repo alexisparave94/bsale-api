@@ -59,4 +59,14 @@ class BSaleService
     @client&.close
     Rails.logger.debug "Done."
   end
+
+  def search(query)
+    @products = @client.query("SELECT * FROM product WHERE LOWER(name) like '%#{query}%';")
+  rescue StandardError => e
+    Rails.logger.debug e.message
+    @products = e
+  ensure
+    @client&.close
+    Rails.logger.debug "Done."
+  end
 end
