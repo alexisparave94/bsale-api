@@ -1,4 +1,4 @@
-class BSaleService
+class BsaleService
   def initialize
     @host = "mdb-test.c6vunyturrl6.us-west-1.rds.amazonaws.com"
     @database = "bsale_test"

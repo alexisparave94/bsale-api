@@ -6,6 +6,6 @@ class ApplicationController < ActionController::API
   private
 
   def set_service
-    @bsale_service = BSaleService.new
+    @bsale_service = BsaleService.new
   end
 end
