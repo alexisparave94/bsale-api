@@ -27,4 +27,26 @@ class BSaleService
     @client&.close
     Rails.logger.debug "Done."
   end
+
+  def filter_prodcuts(id)
+    @products = @client.query(
+      "SELECT
+        p.id,
+        p.name,
+        p.url_image,
+        p.price,
+        p.discount,
+        c.name as cat_name
+        from product as p
+        JOIN category as c
+        ON p.category = c.id
+        WHERE p.category = #{id};"
+    )
+  rescue StandardError => e
+    Rails.logger.debug e.message
+    @products = e
+  ensure
+    @client&.close
+    Rails.logger.debug "Done."
+  end
 end
