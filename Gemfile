@@ -9,6 +9,9 @@ gem "rails", "~> 7.0.3", ">= 7.0.3.1"
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 
+# Use mysql gem to connect with database disponible
+gem "mysql2", "~> 0.5"
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
