@@ -49,4 +49,14 @@ class BSaleService
     @client&.close
     Rails.logger.debug "Done."
   end
+
+  def list_categories
+    @categories = @client.query("SELECT * FROM category;")
+  rescue StandardError => e
+    Rails.logger.debug e.message
+    @products = e
+  ensure
+    @client&.close
+    Rails.logger.debug "Done."
+  end
 end
