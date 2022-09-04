@@ -28,7 +28,7 @@ class BSaleService
     Rails.logger.debug "Done."
   end
 
-  def filter_prodcuts(id)
+  def filter_products(id)
     @products = @client.query(
       "SELECT
         p.id,
